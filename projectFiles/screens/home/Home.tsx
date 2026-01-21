@@ -3,8 +3,12 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import SafeAreaWrapper from '../../components/safeAreaWrapper';
 import COLORS from '../../styles/colors';
 import { fs, vs } from '../../utilities/responsiveness';
+import { useNavigation } from '@react-navigation/native'
 
-const Home = ({ navigation }: any) => {
+
+const Home = () => {
+  const navigation = useNavigation<any>()
+
   return (
     <View style={styles.mainContainer}>
       <SafeAreaWrapper>

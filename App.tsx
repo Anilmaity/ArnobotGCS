@@ -1,28 +1,23 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { StatusBar, useColorScheme } from 'react-native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
-import Home from "./projectFiles/screens/home/Home.tsx";
+import Home from './projectFiles/screens/home/Home'
+import CameraScreen from './projectFiles/screens/camera/CameraScreen'
 
-function App() {
-    const isDarkMode = useColorScheme() === 'dark'
+const Stack = createNativeStackNavigator()
 
+export default function App() {
     return (
         <SafeAreaProvider>
-            <NavigationContainer >
-                <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-                <Home navigation={null} />
+            <NavigationContainer>
+                {/*<Stack.Navigator screenOptions={{ headerShown: false }}>*/}
+                {/*    <Stack.Screen name="Home" component={Home} />*/}
+                {/*    <Stack.Screen name="CameraScreen" component={CameraScreen} />*/}
+                {/*</Stack.Navigator>*/}
+                <Home />
             </NavigationContainer>
         </SafeAreaProvider>
     )
 }
-
-export default App
